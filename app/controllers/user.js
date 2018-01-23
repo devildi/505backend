@@ -82,7 +82,7 @@ exports.login = function*(next){
 	}
 	if (code === user.code){
 		this.session.user = user
-		console.log("SESSION", this.session.user)
+		//console.log("SESSION", this.session.user)
 		this.body = {user: user}
 	} else {
 		this.body = {err:'用户密码错误'}
