@@ -29,6 +29,7 @@ var walk = function(modelPath){
 walk(model_path)
 
 var koa = require('koa')
+var favicon = require('koa-favicon')
 const cors = require('@koa/cors')
 var logger = require('koa-logger')
 var session = require('koa-session')
@@ -37,7 +38,7 @@ var bodyParser = require('koa-bodyparser')
 
 var app = new koa()
 app.use(cors())
-
+app.use(favicon(__dirname + '/public/favicon.ico'))
 app.keys = ['387694318']
 app.use(logger())
 app.use(session(app))
